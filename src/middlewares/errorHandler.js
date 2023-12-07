@@ -1,5 +1,4 @@
 // Custom error handling middleware
-
 export class customErrorHandler extends Error {
     constructor(statusCode, errMessage) {
         super(errMessage);

@@ -8,6 +8,7 @@ export class ProductsController {
         this.productsRepository = new ProductsRepository();
     };
 
+    // Controller for adding a product
     async add(req, res) {
         try {
             const { name, quantity } = req.body;
@@ -23,6 +24,7 @@ export class ProductsController {
         }
     };
 
+    // Controller for fetching all products
     async getAll(req, res) {
         try {
             const allProducts = await this.productsRepository.getAll();
@@ -37,6 +39,7 @@ export class ProductsController {
         }
     };
 
+    // Controller for deleting a product
     async delete(req, res) {
         try {
             const id = req.params.id;
@@ -52,6 +55,7 @@ export class ProductsController {
         }
     };
 
+    // Controller for updating a product
     async update(req, res) {
         try {
             const id = req.params.id;

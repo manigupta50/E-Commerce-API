@@ -3,6 +3,7 @@ import { ProductsModel } from "./products.schema.js";
 
 export class ProductsRepository {
 
+    // Repository for adding a product
     async add(name, quantity) {
         try {
             const newProduct = new ProductsModel({ name, quantity });
@@ -18,6 +19,7 @@ export class ProductsRepository {
         }
     };
 
+    // Repository for fetching all products
     async getAll() {
         try {
             const allProducts = await ProductsModel.find();
@@ -28,6 +30,7 @@ export class ProductsRepository {
         }
     };
 
+    // Repository for deleting a product
     async delete(id) {
         try {
             const isDeleted = await ProductsModel.deleteOne({ _id: id });
@@ -38,6 +41,7 @@ export class ProductsRepository {
         }
     };
 
+    // Repository for updating a product
     async update(id, quantity) {
         try {
             const updatedProduct = await ProductsModel.findOneAndUpdate({ _id: id }, { quantity: quantity }, { new: true });
